@@ -7,7 +7,7 @@ const Provider = ({ children }) => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [favorites, setFavorites] = useState([]);
-  const [loading, setLoading] = useState(false);
+  //   const [loading, setLoading] = useState(false);
 
   const API_KEY = "3dbeba74321820a2149b26303a7bbc1b";
 
@@ -35,6 +35,12 @@ const Provider = ({ children }) => {
     favorites,
     setFavorites,
   };
+
+  return (
+    <MovieContext.Provider value={valueToShare}>
+      {children}
+    </MovieContext.Provider>
+  );
 };
 
 export { Provider };
