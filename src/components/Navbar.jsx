@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <header>
-      <div className="w-full h-[70px] flex flex-col items-center gap-2 py-8 lg:flex-row lg:justify-between lg:items-center">
+      <div className="w-full h-[80px] flex flex-col items-center gap-2 py-8 lg:flex-row lg:justify-between lg:items-center lg:border-b-2 lg:border-gray-700">
         <h1 className="text-white mr-8 text-2xl lg:text-3xl pl-10 font-semibold lg:mr-0">
           <Link to="/">
             Find<span className="text-orange-500">Movie</span>
