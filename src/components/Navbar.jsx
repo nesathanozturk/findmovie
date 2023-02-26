@@ -12,7 +12,7 @@ function Navbar() {
         <input
           type="text"
           placeholder="Search a movie"
-          className="bg-transparent mt-2 p-2 rounded-lg outline-none bg-gray-600 text-white"
+          className="bg-transparent mt-2 p-2 rounded-lg outline-none bg-gray-700 text-white"
         />
         <nav>
           <ul className="flex px-10 text-orange-500 text-lg font-bold">
