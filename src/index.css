@@ -6,6 +6,7 @@
 @layer components {
   body {
     background: #111827;
+    font-family: "Poppins", sans-serif;
   }
 
   .hover {
