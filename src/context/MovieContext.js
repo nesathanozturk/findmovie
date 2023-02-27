@@ -8,6 +8,7 @@ function Provider({ children }) {
   const [searchValue, setSearchValue] = useState("");
   const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const [movieDetail, setMovieDetail] = useState([]);
 
   const handleGetMovies = async (searchValue) => {
     try {
@@ -69,6 +70,15 @@ function Provider({ children }) {
     clearFavoritesNotify();
   };
 
+  const showMovieDetail = async (imdbID) => {
+    const res = await axios(
+      `http://www.omdbapi.com/?i=${imdbID}&apikey=${process.env.REACT_APP_API_KEY}`
+    );
+
+    const data = res.data;
+    setMovieDetail(data);
+  };
+
   const valueToShare = {
     movies,
     setMovies,
@@ -78,6 +88,8 @@ function Provider({ children }) {
     addMovieAtFavorites,
     removeMovieAtFavorites,
     clearFavorites,
+    movieDetail,
+    showMovieDetail,
   };
 
   return (

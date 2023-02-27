@@ -1,5 +1,6 @@
 import useMovieContext from "../hooks/use-movie-context";
 import { AiFillStar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 function MovieItem({ movies }) {
   const { addMovieAtFavorites } = useMovieContext();
@@ -9,7 +10,9 @@ function MovieItem({ movies }) {
       key={movie.imdbID}
       className="bg-[#1c2b4d] w-80 mb-1 mt-2 relative overflow-hidden rounded-xl cursor-pointer text-center transition-transform hover:scale-105 lg:mt-0"
     >
-      <img className="w-full h-96" src={movie.Poster} alt={movie.Title} />
+      <Link to={`/movie/${movie.imdbID}`}>
+        <img className="w-full h-96" src={movie.Poster} alt={movie.Title} />{" "}
+      </Link>
       <div className="flex justify-center items-center flex-col gap-3 text-white text-lg font-semibold py-4 px-4 lg:text-xl">
         <h3>{movie.Title}</h3>
         <span>{movie.Year}</span>
