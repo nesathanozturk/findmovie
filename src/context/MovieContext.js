@@ -13,7 +13,7 @@ function Provider({ children }) {
   const handleGetMovies = async (searchValue) => {
     try {
       const res = await axios.get(
-        `http://www.omdbapi.com/?s=${searchValue}&apikey=${process.env.REACT_APP_API_KEY}`
+        `http://www.omdbapi.com/?s=${searchValue}&apikey=fdd3c23f`
       );
       if (res.data.Search) {
         setMovies(res.data.Search);
