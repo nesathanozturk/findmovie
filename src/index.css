@@ -24,7 +24,7 @@
   }
 
   .details {
-    @apply flex flex-wrap justify-center lg:justify-start gap-6 ml-4 py-2 text-gray-300;
+    @apply flex flex-wrap justify-center md:justify-start gap-6 ml-4 py-2 text-gray-300;
   }
 
   .text {
