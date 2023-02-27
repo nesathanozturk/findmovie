@@ -3,7 +3,7 @@ import { FiInstagram } from "react-icons/fi";
 
 function Footer() {
   return (
-    <footer className="h-[200px] flex flex-col justify-center items-center text-center text-white">
+    <footer className="h-52 flex flex-col justify-center items-center text-center text-white">
       <div className="flex justify-center items-center text-3xl lg:text-4xl gap-2 mb-2">
         <a
           href="https://github.com/nesathanozturk"
