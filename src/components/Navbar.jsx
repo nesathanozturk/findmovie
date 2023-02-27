@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <header>
       <div className="w-full flex flex-col items-center gap-2 py-8 lg:flex-row lg:justify-between">
-        <h1 className="text-white mr-8 text-3xl pl-10 font-semibold lg:mr-0">
+        <h1 className="text-white mr-8 text-4xl pl-10 font-semibold lg:mr-0">
           <Link to="/">
             Find<span className="text-orange-500">Movie</span>
           </Link>
@@ -17,10 +17,10 @@ function Navbar() {
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
           placeholder="Search a movie"
-          className="bg-transparent w-56 p-2 rounded-lg outline-none bg-slate-600 text-white lg:w-64 lg:mt-2"
+          className="bg-transparent w-64 p-2 rounded-lg outline-none bg-zinc-700 text-white lg:w-64 lg:mt-2"
         />
         <nav>
-          <ul className="flex px-10 text-orange-500 text-lg font-bold">
+          <ul className="flex px-10 text-orange-500 text-xl font-bold">
             <li className="mr-4 hover">
               <Link to="/">Home</Link>
             </li>
