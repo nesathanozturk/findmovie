@@ -17,7 +17,7 @@ function Navbar() {
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
           placeholder="Search a movie"
-          className="bg-transparent w-56 p-2 rounded-lg outline-none bg-gray-500 text-white lg:w-64 lg:mt-2"
+          className="bg-transparent w-56 p-2 rounded-lg outline-none bg-slate-600 text-white lg:w-64 lg:mt-2"
         />
         <nav>
           <ul className="flex px-10 text-orange-500 text-lg font-bold">
