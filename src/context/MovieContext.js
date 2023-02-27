@@ -59,6 +59,14 @@ function Provider({ children }) {
     removedMovieAtFavoritesNotify();
   };
 
+  const clearFavorites = (imdbID) => {
+    const updatedFavorites = favorites.filter(
+      (favorite) => favorite.imdbID === imdbID
+    );
+    setFavorites(updatedFavorites);
+    saveToLocalStorage(updatedFavorites);
+  };
+
   const valueToShare = {
     movies,
     setMovies,
@@ -67,6 +75,7 @@ function Provider({ children }) {
     favorites,
     addMovieAtFavorites,
     removeMovieAtFavorites,
+    clearFavorites,
   };
 
   return (
