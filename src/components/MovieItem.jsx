@@ -1,3 +1,5 @@
+import { AiFillStar } from "react-icons/ai";
+
 function MovieItem({ movies }) {
   const renderedMovies = movies.map((movie) => (
     <div
@@ -8,6 +10,9 @@ function MovieItem({ movies }) {
       <div className="flex justify-center items-center flex-col gap-3 text-white text-xl font-semibold py-4 px-4">
         <h3>{movie.Title}</h3>
         <span>{movie.Year}</span>
+        <span className="absolute top-2 right-2 text-3xl hover:text-yellow-300 transition-colors">
+          <AiFillStar />
+        </span>
       </div>
     </div>
   ));
