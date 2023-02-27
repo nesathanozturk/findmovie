@@ -27,9 +27,21 @@ function Provider({ children }) {
     handleGetMovies(searchValue);
   }, [searchValue]);
 
+  useEffect(() => {
+    const favoriteMovies = JSON.parse(localStorage.getItem("favorite-movies"));
+    if (favoriteMovies) {
+      setFavorites(favoriteMovies);
+    }
+  }, []);
+
+  const saveToLocalStorage = (items) => {
+    localStorage.setItem("favorite-movies", JSON.stringify(items));
+  };
+
   const addMovieAtFavorites = (movie) => {
     const updatedFavorites = [...favorites, movie];
     setFavorites(updatedFavorites);
+    saveToLocalStorage(updatedFavorites);
   };
 
   const removeMovieAtFavorites = (movie) => {
@@ -37,6 +49,7 @@ function Provider({ children }) {
       (favorite) => favorite.imdbID !== movie.imdbID
     );
     setFavorites(updatedFavorites);
+    saveToLocalStorage(updatedFavorites);
   };
 
   const valueToShare = {
