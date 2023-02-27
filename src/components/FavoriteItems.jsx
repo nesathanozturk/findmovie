@@ -1,5 +1,6 @@
 import useMovieContext from "../hooks/use-movie-context";
 import FavoriteItem from "./FavoriteItem";
+import "react-toastify/dist/ReactToastify.css";
 
 function FavoriteItems() {
   const { favorites } = useMovieContext();

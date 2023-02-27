@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const MovieContext = createContext();
 
@@ -38,10 +39,15 @@ function Provider({ children }) {
     localStorage.setItem("favorite-movies", JSON.stringify(items));
   };
 
+  const addedMovieAtFavoritesNotify = () => toast("Movie added to favorites");
+  const removedMovieAtFavoritesNotify = () =>
+    toast("Movie removed from favorites");
+
   const addMovieAtFavorites = (movie) => {
     const updatedFavorites = [...favorites, movie];
     setFavorites(updatedFavorites);
     saveToLocalStorage(updatedFavorites);
+    addedMovieAtFavoritesNotify();
   };
 
   const removeMovieAtFavorites = (movie) => {
@@ -50,6 +56,7 @@ function Provider({ children }) {
     );
     setFavorites(updatedFavorites);
     saveToLocalStorage(updatedFavorites);
+    removedMovieAtFavoritesNotify();
   };
 
   const valueToShare = {

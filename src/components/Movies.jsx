@@ -1,5 +1,7 @@
 import useMovieContext from "../hooks/use-movie-context";
 import MovieItem from "./MovieItem";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 function Movies() {
   const { movies } = useMovieContext();
