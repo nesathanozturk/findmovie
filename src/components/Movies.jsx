@@ -1,6 +1,9 @@
+import useMovieContext from "../hooks/use-movie-context";
 import MovieItem from "./MovieItem";
 
-function Movies({ movies }) {
+function Movies() {
+  const { movies } = useMovieContext();
+
   return (
     <section className="py-4 pl-4">
       <div className="max-w-full m-auto">

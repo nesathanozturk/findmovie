@@ -1,6 +1,9 @@
+import useMovieContext from "../hooks/use-movie-context";
 import { Link } from "react-router-dom";
 
-function Navbar({ searchValue, setSearchValue }) {
+function Navbar() {
+  const { searchValue, setSearchValue } = useMovieContext();
+
   return (
     <header>
       <div className="w-full flex flex-col items-center gap-2 py-8 lg:flex-row lg:justify-between">
