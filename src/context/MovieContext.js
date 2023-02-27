@@ -9,15 +9,16 @@ const Provider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
   //   const [loading, setLoading] = useState(false);
 
-  const API_KEY = "3dbeba74321820a2149b26303a7bbc1b";
+  const API_KEY = "fdd3c23f";
 
   const handleGetMovies = async (searchValue) => {
     try {
       const res = await axios.get(
-        `https://api.themoviedb.org/keyword=${searchValue}&api_key=${API_KEY}`
+        ` http://www.omdbapi.com/?s=${searchValue}&apikey=${API_KEY}`
       );
-      const data = res.data.results;
-      setMovies(data.movies);
+      if (res.data.Search) {
+        setMovies(res.data.Search);
+      }
     } catch (err) {
       console.log(err);
     }
