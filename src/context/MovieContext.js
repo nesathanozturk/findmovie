@@ -40,8 +40,11 @@ function Provider({ children }) {
   };
 
   const addedMovieAtFavoritesNotify = () => toast("Movie added to favorites");
+
   const removedMovieAtFavoritesNotify = () =>
     toast("Movie removed from favorites");
+
+  const clearFavoritesNotify = () => toast("You have cleared your favorites");
 
   const addMovieAtFavorites = (movie) => {
     const updatedFavorites = [...favorites, movie];
@@ -65,6 +68,7 @@ function Provider({ children }) {
     );
     setFavorites(updatedFavorites);
     saveToLocalStorage(updatedFavorites);
+    clearFavoritesNotify();
   };
 
   const valueToShare = {
