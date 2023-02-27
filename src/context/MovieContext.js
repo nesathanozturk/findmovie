@@ -12,14 +12,13 @@ function Provider({ children }) {
 
   const handleGetMovies = async (searchValue) => {
     try {
-      await fetch(`http://www.omdbapi.com/?s=${searchValue}&apikey=fdd3c23f`)
+      await fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=3dbeba74321820a2149b26303a7bbc1b&query=${searchValue}`
+      )
         .then((res) => res.json())
         .then((res) => {
-          if (res.Response === "True") {
-            setMovies(res.Search);
-          } else {
-            setMovies([]);
-          }
+          setMovies(res.results);
+          console.log(res.results);
         });
     } catch (err) {
       console.log(err);
@@ -57,29 +56,23 @@ function Provider({ children }) {
 
   const removeMovieAtFavorites = (movie) => {
     const updatedFavorites = favorites.filter(
-      (favorite) => favorite.imdbID !== movie.imdbID
+      (favorite) => favorite.id !== movie.id
     );
     setFavorites(updatedFavorites);
     saveToLocalStorage(updatedFavorites);
     removedMovieAtFavoritesNotify();
   };
 
-  const clearFavorites = (imdbID) => {
-    const updatedFavorites = favorites.filter(
-      (favorite) => favorite.imdbID === imdbID
-    );
+  const clearFavorites = (id) => {
+    const updatedFavorites = favorites.filter((favorite) => favorite.id === id);
     setFavorites(updatedFavorites);
     saveToLocalStorage(updatedFavorites);
     clearFavoritesNotify();
   };
 
-  const showMovieDetail = async (imdbID) => {
-    const res = await axios(
-      `http://www.omdbapi.com/?i=${imdbID}&apikey=${process.env.REACT_APP_API_KEY}`
-    );
-
-    const data = res.data;
-    setMovieDetail(data);
+  const showMovieDetail = async (id) => {
+    const response = await axios.get(`localhost:3000/${id}`);
+    setMovieDetail(response.data);
   };
 
   const valueToShare = {
