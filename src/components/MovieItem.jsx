@@ -1,6 +1,9 @@
 import { AiFillStar } from "react-icons/ai";
+import useMovieContext from "../hooks/use-movie-context";
 
 function MovieItem({ movies }) {
+  const { addMovieAtFavorites } = useMovieContext();
+
   const renderedMovies = movies.map((movie) => (
     <div
       key={movie.imdbID}
@@ -10,7 +13,10 @@ function MovieItem({ movies }) {
       <div className="flex justify-center items-center flex-col gap-3 text-white text-xl font-semibold py-4 px-4">
         <h3>{movie.Title}</h3>
         <span>{movie.Year}</span>
-        <span className="absolute top-2 right-2 text-3xl hover:text-yellow-300 transition-colors">
+        <span
+          className="absolute top-2 right-2 text-3xl hover:text-yellow-300 transition-colors"
+          onClick={addMovieAtFavorites}
+        >
           <AiFillStar />
         </span>
       </div>
