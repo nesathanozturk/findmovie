@@ -6,6 +6,7 @@
 
 - React JS
 - Context API
+- Axios
 - Tailwind for styles
 - Icons for React Icons
 - Toastify for React Toastify
