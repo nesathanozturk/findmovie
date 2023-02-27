@@ -12,12 +12,15 @@ function Provider({ children }) {
 
   const handleGetMovies = async (searchValue) => {
     try {
-      const res = await axios.get(
-        `http://www.omdbapi.com/?s=${searchValue}&apikey=fdd3c23f`
-      );
-      if (res.data.Search) {
-        setMovies(res.data.Search);
-      }
+      await fetch(`http://www.omdbapi.com/?s=${searchValue}&apikey=fdd3c23f`)
+        .then((res) => res.json())
+        .then((res) => {
+          if (res.Response === "True") {
+            setMovies(res.Search);
+          } else {
+            setMovies([]);
+          }
+        });
     } catch (err) {
       console.log(err);
     }
