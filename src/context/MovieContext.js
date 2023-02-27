@@ -9,12 +9,10 @@ function Provider({ children }) {
   const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
-  const API_KEY = "fdd3c23f";
-
   const handleGetMovies = async (searchValue) => {
     try {
       const res = await axios.get(
-        ` http://www.omdbapi.com/?s=${searchValue}&apikey=${API_KEY}`
+        `http://www.omdbapi.com/?s=${searchValue}&apikey=${process.env.REACT_APP_API_KEY}`
       );
       if (res.data.Search) {
         setMovies(res.data.Search);
