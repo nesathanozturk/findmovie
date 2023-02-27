@@ -7,7 +7,6 @@ const Provider = ({ children }) => {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [favorites, setFavorites] = useState([]);
-  //   const [loading, setLoading] = useState(false);
 
   const API_KEY = "fdd3c23f";
 
