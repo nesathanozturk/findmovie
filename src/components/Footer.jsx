@@ -4,7 +4,7 @@ import { FiInstagram } from "react-icons/fi";
 function Footer() {
   return (
     <footer className="h-52 flex flex-col justify-center items-center text-center text-white">
-      <div className="flex justify-center items-center text-3xl lg:text-4xl gap-2 mb-2">
+      <div className="flex justify-center items-center text-4xl lg:text-5xl gap-2 mb-2">
         <a
           href="https://github.com/nesathanozturk"
           className="hover:text-purple-700"
@@ -24,7 +24,7 @@ function Footer() {
           <AiFillLinkedin />
         </a>
       </div>
-      <p className="text-md lg:text-xl">
+      <p className="text-lg lg:text-xl">
         Copyright &copy; 2023, Neşathan Öztürk - All right reserved.
       </p>
     </footer>
