@@ -3,7 +3,7 @@ import axios from "axios";
 
 const MovieContext = createContext();
 
-const Provider = ({ children }) => {
+function Provider({ children }) {
   const [searchValue, setSearchValue] = useState("");
   const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
@@ -32,9 +32,9 @@ const Provider = ({ children }) => {
     setFavorites(updatedFavorites);
   };
 
-  const removeMovieFromFavorites = (movie) => {
+  const removeMovieAtFavorites = (movie) => {
     const updatedFavorites = favorites.filter(
-      (favorite) => favorite.imdbID === movie.imdbID
+      (favorite) => favorite.imdbID !== movie.imdbID
     );
     setFavorites(updatedFavorites);
   };
@@ -46,7 +46,7 @@ const Provider = ({ children }) => {
     setSearchValue,
     favorites,
     addMovieAtFavorites,
-    removeMovieFromFavorites,
+    removeMovieAtFavorites,
   };
 
   return (
@@ -54,7 +54,7 @@ const Provider = ({ children }) => {
       {children}
     </MovieContext.Provider>
   );
-};
+}
 
 export { Provider };
 export default MovieContext;

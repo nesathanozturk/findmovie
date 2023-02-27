@@ -1,5 +1,5 @@
-import { AiFillStar } from "react-icons/ai";
 import useMovieContext from "../hooks/use-movie-context";
+import { AiFillStar } from "react-icons/ai";
 
 function MovieItem({ movies }) {
   const { addMovieAtFavorites } = useMovieContext();
@@ -15,7 +15,7 @@ function MovieItem({ movies }) {
         <span>{movie.Year}</span>
         <span
           className="absolute top-2 right-2 text-3xl hover:text-yellow-300 transition-colors"
-          onClick={addMovieAtFavorites}
+          onClick={() => addMovieAtFavorites(movie)}
         >
           <AiFillStar />
         </span>
