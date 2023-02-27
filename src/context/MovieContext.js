@@ -4,8 +4,8 @@ import axios from "axios";
 const MovieContext = createContext();
 
 const Provider = ({ children }) => {
-  const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState("");
+  const [movies, setMovies] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
   const API_KEY = "fdd3c23f";
@@ -27,13 +27,26 @@ const Provider = ({ children }) => {
     handleGetMovies(searchValue);
   }, [searchValue]);
 
+  const addMovieAtFavorites = (movie) => {
+    const updatedFavorites = [...favorites, movie];
+    setFavorites(updatedFavorites);
+  };
+
+  const removeMovieFromFavorites = (movie) => {
+    const updatedFavorites = favorites.filter(
+      (favorite) => favorite.imdbID === movie.imdbID
+    );
+    setFavorites(updatedFavorites);
+  };
+
   const valueToShare = {
     movies,
     setMovies,
     searchValue,
     setSearchValue,
     favorites,
-    setFavorites,
+    addMovieAtFavorites,
+    removeMovieFromFavorites,
   };
 
   return (
