@@ -71,8 +71,10 @@ function Provider({ children }) {
   };
 
   const showMovieDetail = async (id) => {
-    const response = await axios.get(`localhost:3000/${id}`);
-    setMovieDetail(response.data);
+    const res = await axios(
+      `https://api.themoviedb.org/3/movie/${id}?api_key=3dbeba74321820a2149b26303a7bbc1b`
+    );
+    setMovieDetail(res.data);
   };
 
   const valueToShare = {

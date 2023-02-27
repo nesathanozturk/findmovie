@@ -11,8 +11,6 @@ function MovieDetail() {
     showMovieDetail(id);
   });
 
-  console.log(movieDetail);
-
   return (
     <div className="w-full mt-2 md:mt-24 flex justify-center items-center">
       <div className="bg-[#222] w-5/6 md:w-4/5 lg:w-4/5 xl:w-3/5 flex flex-col md:flex-row lg:flex-row gap-8 mb-1 mt-1 relative overflow-hidden rounded-xl cursor-pointer">
