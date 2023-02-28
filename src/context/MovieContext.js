@@ -13,7 +13,7 @@ function Provider({ children }) {
   const handleGetMovies = async (searchValue) => {
     try {
       const res = await axios(
-        `https://api.themoviedb.org/3/search/movie?api_key=3dbeba74321820a2149b26303a7bbc1b&query=${searchValue}`
+        `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${searchValue}`
       );
       setMovies(res.data.results);
     } catch (err) {
@@ -68,7 +68,7 @@ function Provider({ children }) {
 
   const showMovieDetail = async (id) => {
     const res = await axios(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=3dbeba74321820a2149b26303a7bbc1b`
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}`
     );
     setMovieDetail(res.data);
   };
