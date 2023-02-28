@@ -10,10 +10,12 @@ function Provider({ children }) {
   const [favorites, setFavorites] = useState([]);
   const [movieDetail, setMovieDetail] = useState([]);
 
-  const handleGetMovies = async (searchValue) => {
+  const API_KEY = "3dbeba74321820a2149b26303a7bbc1b";
+
+  const getMovies = async (searchValue) => {
     try {
       const res = await axios(
-        `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${searchValue}`
+        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchValue}`
       );
       setMovies(res.data.results);
     } catch (err) {
@@ -22,7 +24,7 @@ function Provider({ children }) {
   };
 
   useEffect(() => {
-    handleGetMovies(searchValue);
+    getMovies(searchValue);
   }, [searchValue]);
 
   useEffect(() => {
@@ -68,7 +70,7 @@ function Provider({ children }) {
 
   const showMovieDetail = async (id) => {
     const res = await axios(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}`
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`
     );
     setMovieDetail(res.data);
   };
