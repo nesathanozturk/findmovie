@@ -12,14 +12,10 @@ function Provider({ children }) {
 
   const handleGetMovies = async (searchValue) => {
     try {
-      await fetch(
+      const res = await axios(
         `https://api.themoviedb.org/3/search/movie?api_key=3dbeba74321820a2149b26303a7bbc1b&query=${searchValue}`
-      )
-        .then((res) => res.json())
-        .then((res) => {
-          setMovies(res.results);
-          console.log(res.results);
-        });
+      );
+      setMovies(res.data.results);
     } catch (err) {
       console.log(err);
     }

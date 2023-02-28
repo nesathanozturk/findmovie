@@ -27,11 +27,11 @@
     @apply flex flex-wrap justify-center md:justify-start gap-6 ml-4 py-2 text-gray-300;
   }
 
-  .text {
-    @apply py-2 text-sm font-medium lg:text-xl;
+  .text-size {
+    @apply py-2 text-base font-medium lg:text-xl;
   }
 
-  .text-2 {
+  .text-space {
     @apply text-gray-300 ml-4 mt-4 py-2;
   }
 }
