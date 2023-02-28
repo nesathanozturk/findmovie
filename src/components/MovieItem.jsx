@@ -31,7 +31,7 @@ function MovieItem({ movies }) {
   ));
 
   return (
-    <div className="grid grid-cols-1 place-items-center gap-10 mt-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5">
+    <div className="grid grid-cols-1 place-items-center gap-10 mt-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
       {renderedMovies}
     </div>
   );

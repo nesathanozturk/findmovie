@@ -12,7 +12,7 @@ function MovieDetail() {
   }, []);
 
   return (
-    <div className="w-full p-6 mt-2 md:mt-2 flex justify-center items-center">
+    <div className="w-full p-6 mt-2 md:mt-2 2xl:mt-12 flex justify-center items-center">
       <div className="bg-[#222] max-w-5xl w-5/6 md:w-4/5 lg:w-4/5 xl:w-3/5 flex flex-col md:flex-row lg:flex-row gap-8 mb-1 mt-1 relative overflow-hidden rounded-xl cursor-pointer">
         <div className="w-full lg:w-1/2">
           <img
