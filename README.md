@@ -7,6 +7,7 @@
 - React JS
 - Context API
 - Axios
+- Local Storage
 - Tailwind for styles
 - Icons for React Icons
 - Toastify for React Toastify
