@@ -5,6 +5,7 @@
 ## 🧰 Technologies Used
 
 - React JS
+- React Router
 - Context API
 - Axios
 - Local Storage
