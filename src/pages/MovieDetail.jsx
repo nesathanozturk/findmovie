@@ -13,7 +13,7 @@ function MovieDetail() {
   }, []);
 
   return (
-    <section className="w-full h-screen p-6 md:mt-2 2xl:mt-5 flex justify-center items-center">
+    <section className="w-full h-screen p-6 md:mt-2 2xl:mt-3 flex justify-center items-center">
       <div className="bg-[#222] max-w-5xl w-5/6 md:w-4/5 xl:w-4/5 my-2 flex flex-col md:flex-row lg:flex-row gap-8 relative overflow-hidden rounded-xl cursor-pointer">
         <div className="w-full lg:w-1/2">
           <img
