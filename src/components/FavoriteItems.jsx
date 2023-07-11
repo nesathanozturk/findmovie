@@ -1,5 +1,5 @@
-import useMovieContext from "../hooks/use-movie-context";
 import FavoriteItem from "./FavoriteItem";
+import useMovieContext from "../hooks/use-movie-context";
 
 function FavoriteItems() {
   const { favorites, clearFavorites } = useMovieContext();

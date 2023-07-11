@@ -1,8 +1,8 @@
-import Navbar from "../components/Navbar";
-import Movies from "../components/Movies";
 import Footer from "../components/Footer";
-import "react-toastify/dist/ReactToastify.css";
+import Movies from "../components/Movies";
+import Navbar from "../components/Navbar";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Home() {
   return (

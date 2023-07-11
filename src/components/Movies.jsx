@@ -1,5 +1,5 @@
-import useMovieContext from "../hooks/use-movie-context";
 import MovieItem from "./MovieItem";
+import useMovieContext from "../hooks/use-movie-context";
 
 function Movies() {
   const { movies } = useMovieContext();

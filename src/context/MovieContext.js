@@ -1,5 +1,5 @@
-import { createContext, useState, useEffect } from "react";
 import axios from "axios";
+import { createContext, useState, useEffect } from "react";
 import { toast } from "react-toastify";
 
 const MovieContext = createContext();
@@ -46,6 +46,12 @@ function Provider({ children }) {
   const clearFavoritesNotify = () => toast("You have cleared your favorites");
 
   const addMovieAtFavorites = (movie) => {
+    const existMovie = favorites.find((favorite) => favorite.id === movie.id);
+
+    if (existMovie) {
+      alert("This movie is already in your favorites!");
+      return;
+    }
     const updatedFavorites = [...favorites, movie];
     setFavorites(updatedFavorites);
     saveToLocalStorage(updatedFavorites);
