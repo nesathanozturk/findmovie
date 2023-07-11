@@ -1,10 +1,11 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import useMovieContext from "../hooks/use-movie-context";
 
 function MovieDetail() {
   const { movieDetail, showMovieDetail } = useMovieContext();
 
+  const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
@@ -33,8 +34,11 @@ function MovieDetail() {
           <p className="text-space mb-6 text-base lg:font-bold lg:text-lg">
             {movieDetail.overview}
           </p>
-          <button className="py-2 px-3 ml-4 mb-4 border-2 lg:px-5 text-yellow-300 rounded-lg border-yellow-300 hover:bg-yellow-300 hover:text-black transition-colors">
-            <Link to="/">Back Home</Link>
+          <button
+            onClick={() => navigate(-1)}
+            className="py-2 px-3 ml-4 mb-4 border-2 lg:px-5 text-yellow-300 rounded-lg border-yellow-300 hover:bg-yellow-300 hover:text-black transition-colors"
+          >
+            Back
           </button>
         </div>
       </div>
