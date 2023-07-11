@@ -17,7 +17,7 @@ function MovieDetail() {
       <div className="bg-[#222] max-w-5xl w-5/6 md:w-4/5 xl:w-4/5 my-2 flex flex-col md:flex-row lg:flex-row gap-8 relative overflow-hidden rounded-xl cursor-pointer">
         <div className="w-full lg:w-1/2">
           <img
-            className="object-cover lg:mt-0"
+            className="w-full h-full object-cover lg:mt-0"
             src={`https://image.tmdb.org/t/p/original${movieDetail.poster_path}`}
             alt={movieDetail.title}
           />
